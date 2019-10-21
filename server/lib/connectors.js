@@ -1,4 +1,4 @@
-import { Debug, C } from "./import";
+import { Debug } from "./import";
 
 const Sequelize = require("sequelize");
 require("dotenv").config();
@@ -36,6 +36,7 @@ const dialect = "sqlite";
 const sequelize = new Sequelize(database, user, password, {
   host,
   dialect,
+  storage: "database.sqlite",
   logging: Debug.sql ? console.log : undefined,
 
   define: {
@@ -83,7 +84,7 @@ const Subscription = sequelize.define("subscription", {
   gid: { type: Sequelize.INTEGER }
 });
 
-const sync = async () => {
+const syncDatabase = async () => {
   const id = process.env.pm_id;
   console.log(`id=${id}`);
   if (id == 0 || !id) {
@@ -108,4 +109,4 @@ const Model = {
   Subscription
 };
 
-export { Model, sync };
+export { Model, syncDatabase };
