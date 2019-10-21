@@ -57,7 +57,7 @@ type User {
   groups: [Group]
   phone: String
   name: String
-  verified: Bool
+  verified: Boolean
   createdAt: Date
   updatedAt: Date
 }
@@ -86,12 +86,12 @@ type Query {
 
 type Mutation {
 
-  createUser(name: String, phone: String): User
+  createOrUpdateUser(name: String, phone: String): User
   authenticatePhoneUser(auth: String!): User
   createGroup(auth: String!, name: String): Group
-  deleteGroup(auth: String!, gid: Int!): Bool
+  deleteGroup(auth: String!, gid: Int!): Boolean
   
-  setAnytimer(auth: String!, uid1: Int, uid2: Int, n: Int): Bool
+  setAnytimer(auth: String!, uid1: Int, uid2: Int, n: Int): Boolean
   
   createSubscription(auth: String!, gid: Int): [Group]
   deleteSubscription(auth: String!, gid: Int): [Group]

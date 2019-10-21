@@ -41,8 +41,7 @@ const sequelize = new Sequelize(database, user, password, {
   define: {
     charset: "utf8mb4",
     dialectOptions: { collate: "utf8mb4_unicode_ci" }
-  },
-  operatorsAliases: false
+  }
 });
 
 sequelize
