@@ -1,0 +1,13 @@
+{
+  "extends": ["airbnb-base"],
+  "rules": {
+    "comma-dangle": "off",
+    "global-require": "off",
+    "arrow-body-style": "off",
+    "quotes": [2, "double"],
+    "arrow-parens": ["warn", "as-needed"],
+    "function-paren-newline": "off",
+    "object-curly-newline": "off",
+    "prefer-template": "off"
+  }
+}
